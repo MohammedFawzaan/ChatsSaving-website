@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h3>ALL MY CHATS</h3>
+    <h1>ALL MY CHATS</h1>
     <form method="get" action="/chats/new">
         <button>New Chat</button>
     </form> 
@@ -19,6 +19,16 @@
             <p>Message : <%= chat.msg %> </p>
         </div>
         <p>To : <%= chat.to %> </p>
+        <p>Time : <%= chat.created_at.toString().slice(16,25)  %></p>
+        <p>Date : <%= chat.created_at.toString().slice(0,15)  %></p>
+        <div class="buttons">
+            <form method="GET" action="/chats/<%= chat.id %>/edit">
+                <button class="btn">Edit Msg</button>
+            </form>
+            <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE">
+                <button class="btn">Delete this Chat</button>
+            </form>
+        </div>
     </div>
     <hr>
     <% } %>

@@ -23,7 +23,7 @@ async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp');
 } // mongoose connection
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.get("/chats", async (req, res) => {
     let chats = await Chat.find();

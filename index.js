@@ -1,5 +1,4 @@
 const express = require('express'); // require express
-let a = 10;
 const app = express(); // create express app
 const mongoose = require('mongoose'); // require mongoose
 const path = require('path')  // require path
